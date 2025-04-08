@@ -1,0 +1,13 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:1  9091,localhost:19092,localhost:19093
+    consumer:
+      group-id: spring-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      fetch-max-bytes: 209715200  # 200MB
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      max-request-size: 2000000000  # 2GB
